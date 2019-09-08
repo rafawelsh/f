@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>14 Tools to Know</title>
+</head>
+<body>
+    <p onclick="makeGreen()">Don't turn me Green!</p>
+    <script>
+        function makeGreen() {
+            const p = document.querySelector('p');
+            p.style.color = '#97FFAE';
+            p.style.fontsize = '30px'
+        }
+
+        const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+        
+        // // Interpolation
+        // console.log('Hello I am a %s string', '😰')
+
+        // // ES6 way
+        // console.log(`Hello I am a 😰 string`);
+
+        // // Styled
+        // console.log('%c I am some great text' , 'font-size:50px; background: red;')
+
+        // // Waning
+        // console.warn('OH NOO');
+
+        // // error
+        // console.error('DO NOT DO THIS')
+
+        // // info
+        // console.info('This is fun, right?')
+
+        // // testing
+        const p = document.querySelector('p');
+
+        // console.assert(p.classList.contains('ouch'), 'That is wrong')
+        
+        // // clearing
+        // console.clear() 
+        // // clear the console
+
+        // viewing DOM elements
+        console.log(p)
+        console.dir(p);
+
+        // grouping together
+        dogs.forEach( dog => {
+            console.group(`${dog.name}`);
+                console.log(`This is ${dog.name}`);
+                console.log(`${dog.name} is ${dog.age} years old`);
+                console.log(`${dog.name} is ${dog.age * 7} years old`);
+            console.groupEnd(`${dog.name}`);
+
+        });
+        
+        // counting
+        console.count('Rafa')
+        console.count('Melina')
+        console.count('Rafa')
+        console.count('Melina')
+        console.count('Rafa')
+        console.count('Melina')
+        console.count('Rafa')
+        console.count('Melina')
+        console.count('Rafa')
+        console.count('Melina')
+
+        console.clear();
+        
+        // timing
+        console.time('fetching data');
+        fetch('https://api.github.com/users/wesbos')
+            .then(data => data.json())
+            .then(data => {
+                console.timeEnd('fethching data');
+                console.log(data);
+            });
+
+    </script>
+</body>
+</html>
