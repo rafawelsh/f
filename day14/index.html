@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Obj & Array: Reference v Copy</title>
+</head>
+<body>
+    <script>
+    //     // with strings, numbers and booleans it works off the order of the variables
+    // let age = 100;
+    // let age2 = age;
+    // console.log(age, age2);
+    // age = 200;
+    // console.log(age, age2);
+
+    // let name = 'Wes';
+    // let name2 = 'name'
+    // console.log(name, name2);
+    // name = 'Wesley';
+    // console.log(name, name2)
+
+
+    // arrays
+    // team is just a reference to players. Any update on team will affect players and vice versa
+    const players = ['Wes', 'Sarah', 'Ryan', 'Poppy']
+
+    const team = players;
+
+    console.log(players, team);
+    team[3] = 'Lux'
+    players[2] = 'George'
+
+    // You need to copy the array in order to have a seperate array 
+    // 4 wways
+
+    const team2 = players.slice();
+    
+    const team3 = [].concat(players);
+
+    const team4 = [...players];
+
+    const team5 = Array.from(players)
+
+
+    // Objects
+
+    const person = {
+        name: 'Rafael Welsh',
+        age: 23
+    };
+
+    const captain = person;
+    // captain.number = 99;
+
+    // console.log(person)
+    // person has been updated with number. 
+
+    const cap2 = Object.assign({}, person, {number: 99})
+    console.log(person)
+    console.log(captain)
+    console.log(cap2)
+
+    // cap 2 is a copy and can be change without editing person
+    </script>
+</body>
+</html>
